@@ -32,12 +32,11 @@ $(document).ready(function() {
         var movieList = $('#movieList');
         $.each (movies, function(index, movie) {
             movieList.append(
-                `
-                <div class="col-md-4 mb-4">
-                    <a href="movie_detail.html?id=${movie.id} class="btn btn-primary stretched-link" style="text-decoration: none !important;">
-                        <div class="card" style="width: 350px; height: 700px;">
+                `<div class="col-md-4 mb-4">
+                    <a href="movie_detail.html?id=${movie.id}" style="text-decoration: none !important;">
+                        <div class="card">
                             <div class="card-body">
-                                <img src="${movie.img}" class="card-img-top img-fluid"></img>
+                                <img src="${movie.img}" class="card-img-top img-fluid">
                                 <hr>
                                 <p class="card-text">${movie.sipnosis}</p>
                             </div>
@@ -88,8 +87,7 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </div>
-            </div>
-            `       
+            </div>`
         );
     } 
     else {
@@ -123,10 +121,9 @@ $(document).ready(function() {
             // Mostrar las tarjetas de las películas filtradas
             $.each(peliculasFiltradas, function(index, movie) {
                 movieList.append(
-                    `
-                    <div class="col-md-4 mb-4">
-                        <a href="movie_detail.html?id=${movie.id} class="btn btn-primary stretched-link" style="text-decoration: none !important;">
-                            <div class="card" style="width: 350px; height: 700px;">
+                    `<div class="col-md-4 mb-4">
+                        <a href="movie_detail.html?id=${movie.id}" style="text-decoration: none !important;">
+                            <div class="card    ">
                                 <div class="card-body">
                                     <img src="${movie.img}" class="card-img-top img-fluid"></img>
                                     <hr>
@@ -138,7 +135,7 @@ $(document).ready(function() {
                 );
             });
         });
-    }
+    };
     // Mostrar todas las películas al cargar la página
     displayMoviesByGenre();
 });
