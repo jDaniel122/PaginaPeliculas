@@ -8,34 +8,44 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="../src/css/style.css">
         <link rel="shortcut icon" href="../public/img/logo/logoPequeño.jpg"/>
-
     </head>
     <body>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+            <!-- Se encarga de extender al 100% el ancho del navbar -->
             <div class="container-fluid">
-                <a class="Logo_text_center" href="../src/index.html">
-                    <img src="../public/img/logo/LogotipoPagina.png" alt="Logo" width="100px" height="50px" class="d-inline-block align-text-top">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="../src/index.html">
+                    <img src="../public/img/logo/LogotipoPagina.png" alt="Logo" width="100" height="50" class="mr-2">
                 </a>
-                <div id = "busqueda">
-                    <label for="customRange1" class="form-label">Generos:</label>
-                    <select class="form-select" id="selectGenero"aria-label="Disabled select example">
-                        <option value="todos">Todos los géneros</option>
-                        <option value="Infantil">Infantil</option>
-                        <option value="Comedia">Comedia</option>
-                        <option value="Terror">Terror</option>
-                    </select>
-                </div>
-                <div>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>
+                <!-- Botón de menú para móviles bootstrap 4 -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Contenido del Navbar -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <!-- Selección de Géneros -->
+                    <div class="mb-3">
+                        <label for="selectGenero">Géneros:</label>
+                        <select id="selectGenero" class="form-control">
+                            <option value="todos">Todos los géneros</option>
+                            <option value="Infantil">Infantil</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Terror">Terror</option>
+                        </select>
+                    </div>
+                    <!-- Barra de búsqueda -->
+                    <form class="d-flex flex-column flex-lg-row mt-2 mt-lg-0">
+                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i> <!-- Bootstrap Icons -->
                         </button>
                     </form>
                 </div>
             </div>
         </nav>
         <hr>
+        <!-- Aqui se agregara los card mediante JS(script.js) -->
         <h2>Recomendaciones para usted</h2>
         <hr>
         <div id="movieList" class="row justify-content-center">

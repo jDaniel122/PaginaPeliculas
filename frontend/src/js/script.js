@@ -32,16 +32,18 @@ $(document).ready(function() {
         var movieList = $('#movieList');
         $.each (movies, function(index, movie) {
             movieList.append(
-                `<div class="col-md-4 mb-4">
-                    <a href="movie_detail.html?id=${movie.id}" style="text-decoration: none !important;">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="${movie.img}" class="card-img-top img-fluid">
-                                <hr>
-                                <p class="card-text">${movie.sipnosis}</p>
-                            </div>
-                        </div>
-                    </a>    
+                `<div class="card-deck">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="movie_detail.html?id=${movie.id}" style="text-decoration: none !important;">
+                                <div class="card-body">
+                                    <img src="${movie.img}" class="card-img-top">
+                                    <hr>
+                                    <p class="card-text">${movie.sipnosis}</p>
+                                </div>
+                            </a>
+                        </div>                    
+                    </div>        
                 </div>`
             );
         });
@@ -67,11 +69,11 @@ $(document).ready(function() {
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
-                }
+                };
             </style>
             <div class="row">
                 <div class="col-12 mt-5 mb-4">
-                    <h2>${movie.title}</h2>
+                    <h2><strong>${movie.title}</strong></h2>
                     <hr>
                 </div>
                 <div class="col-12 mt-5 mb-4">
@@ -112,7 +114,7 @@ $(document).ready(function() {
         $('#selectGenero').on('change', function() {
             var valorSelect = $(this).val(); //Obtener el valor seleccionado del elemento de selección
             var movieList = $('#movieList');
-            //Limpiar el contenedor de películas antes de agregar nuevas tarjetas
+            //Limpiar el contenedor de películas antes de cambiar de genero
             movieList.empty();
             // Filtrar las películas según el género seleccionado
             var peliculasFiltradas = (valorSelect === "todos") ? movies : movies.filter(function(movie) {
@@ -121,16 +123,18 @@ $(document).ready(function() {
             // Mostrar las tarjetas de las películas filtradas
             $.each(peliculasFiltradas, function(index, movie) {
                 movieList.append(
-                    `<div class="col-md-4 mb-4">
-                        <a href="movie_detail.html?id=${movie.id}" style="text-decoration: none !important;">
-                            <div class="card    ">
-                                <div class="card-body">
-                                    <img src="${movie.img}" class="card-img-top img-fluid"></img>
-                                    <hr>
-                                    <p class="card-text">${movie.sipnosis}</p>
-                                </div>
-                            </div>
-                        </a>    
+                    `<div class="card-deck">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="movie_detail.html?id=${movie.id}" style="text-decoration: none !important;">
+                                    <div class="card-body">
+                                        <img src="${movie.img}" class="card-img-top">
+                                        <hr>
+                                        <p class="card-text">${movie.sipnosis}</p>
+                                    </div>
+                                </a>
+                            </div>                    
+                        </div>        
                     </div>`
                 );
             });
